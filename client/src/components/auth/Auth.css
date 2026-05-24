@@ -1,0 +1,207 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+
+/* ================= ROOT ================= */
+:root {
+  --bg: #020617;
+  --card: rgba(15, 23, 42, 0.92);
+  --border: #1e293b;
+  --input: #0f172a;
+  --text: #ffffff;
+  --muted: #94a3b8;
+  --primary: #ec4899;
+  --secondary: #8b5cf6;
+}
+
+/* ================= RESET ================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+/* ================= PAGE WRAPPER ================= */
+.auth-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: linear-gradient(to bottom right, var(--bg), #0f172a);
+  padding: 20px;
+}
+
+/* ================= CARD ================= */
+.auth-card {
+  width: 100%;
+  max-width: 480px;
+
+  background: var(--card);
+  border: 1px solid var(--border);
+
+  border-radius: 24px;
+  padding: 40px 30px;
+
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(10px);
+}
+
+/* ================= HEADER ================= */
+.auth-title {
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--text);
+  text-align: center;
+}
+
+.auth-subtitle {
+  font-size: 14px;
+  color: var(--muted);
+  text-align: center;
+  margin-top: 8px;
+}
+
+/* ================= FORM ================= */
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 28px;
+}
+
+.auth-group {
+  display: flex;
+  flex-direction: column;
+}
+
+/* ================= LABEL ================= */
+.auth-label {
+  font-size: 13px;
+  color: #cbd5e1;
+  margin-bottom: 6px;
+}
+
+/* ================= INPUT ================= */
+.auth-input,
+.auth-select {
+  width: 100%;
+  padding: 14px 16px;
+
+  border-radius: 14px;
+
+  background: var(--input);
+  border: 1px solid #334155;
+
+  color: var(--text);
+  font-size: 15px;
+
+  outline: none;
+
+  transition: 0.25s ease;
+}
+
+.auth-input::placeholder {
+  color: #64748b;
+}
+
+/* ================= FOCUS FIXED ================= */
+.auth-input:focus,
+.auth-select:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(236, 72, 153, 0.15);
+  background: #0b1220;
+}
+
+/* ================= DROPDOWN (FIXED) ================= */
+.auth-select {
+  cursor: pointer;
+
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23cbd5e1' viewBox='0 0 20 20'%3E%3Cpath d='M5.5 7.5l4.5 4.5 4.5-4.5'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+  background-size: 18px;
+
+  padding-right: 44px;
+}
+
+/* FIX: hover removed conflict */
+.auth-select:hover {
+  border-color: #475569;
+}
+
+/* ================= BUTTON ================= */
+.auth-button {
+  margin-top: 12px;
+
+  padding: 14px;
+  border: none;
+
+  border-radius: 14px;
+
+  background: linear-gradient(
+    to right,
+    var(--primary),
+    var(--secondary)
+  );
+
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: 0.3s ease;
+}
+
+.auth-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 15px 30px rgba(236, 72, 153, 0.25);
+}
+
+/* ================= FOOTER ================= */
+.auth-footer {
+  text-align: center;
+  margin-top: 18px;
+
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.auth-link {
+  color: var(--primary);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.auth-link:hover {
+  color: #f472b6;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 600px) {
+  .auth-card {
+    padding: 26px 18px;
+    border-radius: 18px;
+  }
+
+  .auth-title {
+    font-size: 26px;
+  }
+
+  .auth-input,
+  .auth-select {
+    font-size: 14px;
+    padding: 12px;
+  }
+
+  .auth-button {
+    font-size: 15px;
+  }
+}
