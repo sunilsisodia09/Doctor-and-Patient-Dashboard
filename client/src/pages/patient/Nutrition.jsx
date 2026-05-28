@@ -23,39 +23,111 @@ const Nutrition = () => {
   };
 
   return (
-    <div className="flex bg-slate-950 min-h-screen text-white">
+    <div
+      style={{
+        display: "flex",
+        backgroundColor: "#020617",
+        minHeight: "100vh",
+        color: "white",
+        fontFamily: "Arial, sans-serif",
+      }}
+    >
       <Sidebar />
 
-      <div className="flex-1">
+      <div
+        style={{
+          flex: 1,
+          width: "100%",
+        }}
+      >
         <Navbar />
 
-        <div className="p-6">
-          <h1 className="text-4xl font-bold mb-6">
+        <div
+          style={{
+            padding: "24px",
+          }}
+        >
+          <h1
+            style={{
+              fontSize: "40px",
+              fontWeight: "700",
+              marginBottom: "24px",
+            }}
+          >
             Nutrition Tracker
           </h1>
 
-          <div className="grid grid-cols-3 gap-4">
+          <div
+            style={{
+              display: "grid",
+              gridTemplateColumns:
+                "repeat(auto-fit, minmax(280px, 1fr))",
+              gap: "20px",
+            }}
+          >
             {nutrition.length > 0 ? (
               nutrition.map((item, index) => (
                 <div
                   key={index}
-                  className="bg-slate-900 p-6 rounded-xl"
+                  style={{
+                    backgroundColor: "#0f172a",
+                    padding: "24px",
+                    borderRadius: "16px",
+                    border: "1px solid #1e293b",
+                    boxShadow:
+                      "0 4px 10px rgba(0,0,0,0.3)",
+                    transition: "0.3s",
+                  }}
                 >
-                  <h2 className="text-2xl">
+                  <h2
+                    style={{
+                      fontSize: "28px",
+                      fontWeight: "600",
+                      marginBottom: "10px",
+                      color: "#38bdf8",
+                    }}
+                  >
                     Calories
                   </h2>
 
-                  <p>{item.calories}</p>
+                  <p
+                    style={{
+                      fontSize: "18px",
+                    }}
+                  >
+                    {item.calories}
+                  </p>
 
-                  <h2 className="text-2xl mt-4">
+                  <h2
+                    style={{
+                      fontSize: "28px",
+                      fontWeight: "600",
+                      marginTop: "20px",
+                      marginBottom: "10px",
+                      color: "#4ade80",
+                    }}
+                  >
                     Protein
                   </h2>
 
-                  <p>{item.protein}</p>
+                  <p
+                    style={{
+                      fontSize: "18px",
+                    }}
+                  >
+                    {item.protein}
+                  </p>
                 </div>
               ))
             ) : (
-              <p>No Nutrition Data</p>
+              <p
+                style={{
+                  fontSize: "20px",
+                  color: "#cbd5e1",
+                }}
+              >
+                No Nutrition Data
+              </p>
             )}
           </div>
         </div>
